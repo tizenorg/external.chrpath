@@ -32,8 +32,9 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
-
 rm -fr %{buildroot}/usr/doc
 
 
@@ -52,5 +53,5 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING README 
 %{_bindir}/chrpath
 %doc %{_mandir}/man1/chrpath.1*
-
+/usr/share/license/%{name}
 
