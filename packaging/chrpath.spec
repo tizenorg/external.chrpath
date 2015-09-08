@@ -1,13 +1,11 @@
-
 Name:       chrpath
 Summary:    Modify rpath of compiled programs
 Version:    0.13
-Release:    3
+Release:    4
 Group:      Development/Tools
 License:    GPL+
 URL:        http://www.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/
 Source0:    http://www.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/%{name}-%{version}.tar.gz
-Source1001: packaging/chrpath.manifest 
 
 BuildRoot:  %{_tmppath}/%{name}-%{version}-build
 
@@ -24,7 +22,6 @@ is supported.
 
 
 %build
-cp %{SOURCE1001} .
 
 %configure --disable-static
 # Call make instruction with smp support
@@ -47,7 +44,6 @@ rm -rf %{buildroot}
 
 
 %files
-%manifest chrpath.manifest
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README 
 %{_bindir}/chrpath
